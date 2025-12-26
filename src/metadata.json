@@ -1,0 +1,7 @@
+{
+  "name": "Saudi Dialect Assistant (Lahja)",
+  "description": "A sophisticated AI assistant specializing in Saudi Arabic dialects with real-time voice and text interaction capabilities.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}
