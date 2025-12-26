@@ -222,7 +222,7 @@ export const generateAudio = async (text: string, voiceName: string = 'Kore') =>
   const requestBody = {
     model: "LAHJA-V1",
     input: text,
-    voice: 'alloy',
+    voice: 'onyx',
     speed: 0.9,
     response_format: "mp3"
   };
