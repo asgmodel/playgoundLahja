@@ -9,7 +9,7 @@ import { Conversation, Message, AppConfig, Attachment, AppMode, User } from './t
 import { generateResponse, generateAudio } from './services/geminiService';
 import { audioService } from './services/audioService';
 
-const MESSAGE_LIMIT = 5;
+const MESSAGE_LIMIT = 15;
 
 const App: React.FC = () => {
   const [user, setUser] = useState<User | null>(() => {
