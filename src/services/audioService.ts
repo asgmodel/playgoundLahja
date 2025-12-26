@@ -54,6 +54,53 @@ export class AudioService {
       source.onended = resolve;
     });
   }
-}
 
+    async playUrl(buffer: AudioBuffer) {
+    const ctx = this.getContext();
+    
+    const source = ctx.createBufferSource();
+    source.buffer = buffer;
+    source.connect(ctx.destination);
+    
+    this.nextStartTime = Math.max(this.nextStartTime, ctx.currentTime);
+    source.start(this.nextStartTime);
+    this.nextStartTime += buffer.duration;
+    
+    return new Promise((resolve) => {
+      source.onended = resolve;
+    });
+  }
+
+  async playBlob(blob: Blob): Promise<void> {
+    try {
+      const arrayBuffer = await blob.arrayBuffer();
+      const ctx = this.getContext();
+      const audioBuffer = await ctx.decodeAudioData(arrayBuffer);
+      
+      await this.playUrl(audioBuffer);
+      
+    } catch (error) {
+      console.error('Error playing audio from Blob:', error);
+      throw error;
+    }
+  }
+
+  async playAudioFromUrl(url: string): Promise<void> {
+    try {
+      const response = await fetch(url);
+      
+      if (!response.ok) {
+        throw new Error(`Failed to load audio: ${response.status}`);
+      }
+      
+      const blob = await response.blob();
+      await this.playBlob(blob);
+      
+    } catch (error) {
+      console.error('Error playing audio from URL:', error);
+      throw error;
+    }
+  }
+
+}
 export const audioService = AudioService.getInstance();
