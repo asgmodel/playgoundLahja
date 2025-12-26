@@ -280,8 +280,8 @@ const App: React.FC = () => {
               <i className="fas fa-bars-staggered text-xl"></i>
             </button>
             <div className="flex items-center gap-3 group cursor-default">
-              <div className="w-11 h-11 bg-gradient-to-br from-emerald-400 to-emerald-600 rounded-2xl flex items-center justify-center text-white text-lg shadow-xl shadow-emerald-500/20 group-hover:rotate-6 transition-all duration-300">
-                <i className="fas fa-comment-dots"></i>
+             <div className="w-11 h-11 from-emerald-400 to-emerald-600 rounded-2xl flex items-center justify-center text-white text-lg shadow-xl shadow-emerald-500/20 group-hover:rotate-6 transition-all duration-300">
+                <img src="logo.png" style={{ width: '50px', height: '50px' }} alt="Logo" />
               </div>
               <div className="hidden sm:block">
                 <h1 className="text-[15px] font-black text-slate-800 dark:text-white tracking-tight">مساعد لهجة</h1>
