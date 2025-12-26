@@ -175,9 +175,8 @@ const ChatArea: React.FC<ChatAreaProps> = ({
                    <div className="w-1.5 h-1.5 bg-emerald-500 rounded-full"></div>
                 </div>
               ) : lastMsg ? (
-                <p className="text-[14px] sm:text-[15px] font-bold text-slate-700 dark:text-emerald-50 leading-relaxed italic animate-in slide-in-from-bottom-2">
-                  "{lastMsg.content}"
-                </p>
+                 <span className="text-[10px] text-slate-300 dark:text-slate-700 uppercase tracking-[0.3em] font-black">جاهز للمحادثة</span>
+        
               ) : (
                 <span className="text-[10px] text-slate-300 dark:text-slate-700 uppercase tracking-[0.3em] font-black">جاهز للمحادثة</span>
               )}
