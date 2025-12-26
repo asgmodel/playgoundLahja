@@ -19,7 +19,7 @@ const Message: React.FC<MessageProps> = ({ message }) => {
       setIsSynthesizing(true);
       const base64Audio = await generateAudio(message.content);
       if (base64Audio) {
-        await audioService.playPCM(base64Audio);
+        await audioService.playBlob(base64Audio);
       }
     } catch (error) {
       console.error("TTS failed", error);
